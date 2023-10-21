@@ -1,88 +1,147 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  background: url(https://images.unsplash.com/photo-1612441804231-77a36b284856?w=1000&q=80);
-  background-size: cover;
   font-family: sans-serif;
 }
 
 #main {
-  display: grid;
-  grid-template-areas:
-    "left content"
-    "footer footer";
-  width: 80vw;
-  max-height: 80vh;
-  height: fit-content;
-  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: lightgray;
 }
+
+/*======
+TOP MENU
+======*/
 
 #left {
-  grid-area: left;
-  background: rgba(150, 150, 255, 0.8);
-  width: 15vw;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: white;
+  padding: .5rem;
 }
 
-#content {
-  grid-area: content;
-  background: rgb(150, 150, 255);
-  overflow: scroll;
-  padding: 0.2rem 2rem;
-}
-
-#footer {
-  grid-area: footer;
-  text-align: center;
-  background: rgb(220, 220, 255);
-}
-
-ul {
-  list-style: none;
+#left ul {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
-  overflow: hidden;
+}
+
+#left>ul {
+  display: flex;
+}
+
+#left>ul>li {
+  position: relative;
+}
+
+#left>ul>li a {
+  padding: .5rem 1rem;
+}
+
+/* FIXME: MENU */
+#left>ul>li ul {
+  position: absolute;
+  display: none;
+}
+
+:is(#left>ul>li:hover ul, #left>ul>li ul:hover) {
+  display: block;
+}
+
+#left>ul>li ul {
+  box-shadow: 0 0 10px rgba(180, 180, 180, 0.8);
+}
+
+#left>ul>li li {
+  background: white;
+  border: solid #aaaaaa 1px;
+  padding: .4rem 1rem;
+}
+
+#left>ul>li li:not(:first-child) {
+  margin-top: -1px;
+}
+
+#left>ul>li li:hover {
+  background: #eeeeee;
 }
 
 a {
-  display: inline-block;
-  background: rgba(150, 180, 230, 0.6);
-  width: 100%;
-  padding: 0.3rem 1rem;
+  text-decoration: none;
 }
 
-ul ul a {
-  background: rgb(120, 150, 210);
-  padding-left: 1.5rem;
-}
+/*==========
+MAIN CONTENT
+==========*/
 
-a:hover {
-  background: rgba(150, 180, 230, 1);
-}
-
-form {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-:not(fieldset)>label {
+#content {
   display: flex;
   flex-direction: column;
 }
 
-table {
+.article {
+  margin: 20px;
+  padding: .5rem;
+  background: white;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+  #content {
+    flex-direction: row;
+  }
+
+  .article {
+    /* FIXME: should be 50vw - margin etc */
+    max-width: 50vw;
+  }
+}
+
+.article img {
   width: 100%;
 }
 
-th {
-  background: green;
+.article p {
+  text-align: justify;
 }
 
-tr:nth-child(even) td {
-  background: red;
+.article form {
+  background: lightgrey;
+  display: flex;
+  flex-direction: column;
 }
 
-tr:nth-child(odd) td {
-  background: blue;
+.article form div {
+  display: flex;
+  flex-direction: column;
+}
+
+/*====
+FOOTER
+====*/
+
+#footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+}
+
+#footer>* {
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  color: grey;
+}
+
+#footer>*:not(:first-child) {
+  border-left: solid 1px grey;
+}
+
+tr td {
+  border-bottom: solid 1px lightgrey;
+  padding: .1rem 2rem;
 }
