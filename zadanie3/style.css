@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background: url(https://images.unsplash.com/photo-1612441804231-77a36b284856?w=1000&q=80);
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+#main {
+  display: grid;
+  grid-template-areas:
+    "left content"
+    "footer footer";
+  width: 80vw;
+  max-height: 80vh;
+  height: fit-content;
+  grid-template-rows: auto 1fr;
+}
+
+#left {
+  grid-area: left;
+  background: rgba(150, 150, 255, 0.8);
+  width: 15vw;
+}
+
+#content {
+  grid-area: content;
+  background: rgb(150, 150, 255);
+  overflow: scroll;
+  padding: 0.2rem 2rem;
+}
+
+#footer {
+  grid-area: footer;
+  text-align: center;
+  background: rgb(220, 220, 255);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+a {
+  display: inline-block;
+  background: rgba(150, 180, 230, 0.6);
+  width: 100%;
+  padding: 0.3rem 1rem;
+}
+
+ul ul a {
+  background: rgb(120, 150, 210);
+  padding-left: 1.5rem;
+}
+
+a:hover {
+  background: rgba(150, 180, 230, 1);
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+:not(fieldset)>label {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background: green;
+}
+
+tr:nth-child(even) td {
+  background: red;
+}
+
+tr:nth-child(odd) td {
+  background: blue;
+}
