@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+
+  <script defer src="./zad1.js"></script>
+  <script defer src="./zad2.js"></script>
+  <script defer src="./zad3.js"></script>
+
+  <style>
+    #zad-2__calc {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #zad-2__calc__res {
+      background: turquoise;
+      height: 2rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      font-size: 2rem;
+      color: cadetblue;
+      border: 2px solid cadetblue;
+    }
+
+    #zad-2__calc__form {
+      background: lightgray;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding: 2em .5em;
+    }
+
+    #zad-2__calc label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #zad-2__calc input {
+      width: 2em;
+      padding: .5em;
+      text-align: center;
+    }
+
+    #zad-2__calc select {
+      text-align: center;
+    }
+
+    #zad-2__calc input[type="submit"] {
+      appearance: none;
+      width: min-content;
+      background: dimgray;
+      color: lightgray;
+      border: none;
+    }
+
+    #zad-2__calc__res {}
+  </style>
+</head>
+
+<body>
+  <div id="zad-1">
+    <h1>Zadanie 1</h1>
+    <button id="zad-1-btn-1">1</button>
+    <button id="zad-1-btn-2">2</button>
+    <button id="zad-1-btn-3">3</button>
+    <button id="zad-1-btn-4">4</button>
+    <div id="zad-1-div">
+      <div id="zad-1-div__1">div 1</div>
+      <div id="zad-1-div__2">div 2</div>
+      <div id="zad-1-div__3">div 3</div>
+      <div id="zad-1-div__4">div 4</div>
+    </div>
+  </div>
+
+  <div id="zad-2">
+    <h1>Zadanie 2</h1>
+    <form id="zad-2__calc">
+      <div id="zad-2__calc__res"></div>
+      <div id="zad-2__calc__form">
+        <label>
+          Pierwsza liczba
+          <input type="text" name="fst">
+        </label>
+        <label>
+          Druga liczba
+          <input type="text" name="snd">
+        </label>
+        <label>
+          Dzialanie
+          <select name="typ">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="mul">*</option>
+            <option value="div">/</option>
+          </select>
+        </label>
+        <input type="submit" value="Oblicz">
+      </div>
+  </div>
+
+  <div id="zad-3">
+    <h1>Zadanie 3</h1>
+  </div>
+</body>
+
+</html>

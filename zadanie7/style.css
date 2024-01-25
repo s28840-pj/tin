@@ -24,16 +24,32 @@ TOP MENU
   padding: .5rem;
 }
 
-#left input {
-  display: none;
-}
-
 #left ul {
   list-style-type: none;
   padding: 0;
 }
 
 #left>ul {
+  display: none;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+#left>input[type="checkbox"] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+#left>input[type="checkbox"]::before {
+  content: '≡';
+  font-size: 2rem;
+  line-height: 40%;
+}
+
+#left>input[type="checkbox"]:checked+ul {
   display: flex;
 }
 
@@ -41,18 +57,24 @@ TOP MENU
   position: relative;
 }
 
-#left>ul>li a {
-  padding: .5rem 1rem;
-}
+@media screen and (min-width: 1024px) {
+  #left>input[type="checkbox"] {
+    display: none;
+  }
 
-/* FIXME: MENU */
-#left>ul>li ul {
-  position: absolute;
-  display: none;
-}
+  #left>ul {
+    display: flex;
+    flex-direction: row;
+  }
 
-:is(#left>ul>li:hover ul, #left>ul>li ul:hover) {
-  display: block;
+  #left>ul>li ul {
+    position: absolute;
+    display: none;
+  }
+
+  :is(#left>ul>li:hover ul, #left>ul>li ul:hover) {
+    display: block;
+  }
 }
 
 #left>ul>li ul {

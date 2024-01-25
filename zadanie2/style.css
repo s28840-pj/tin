@@ -25,6 +25,10 @@ body {
   width: 15vw;
 }
 
+#left input {
+  display: none;
+}
+
 #content {
   grid-area: content;
   background: rgb(150, 150, 255);
